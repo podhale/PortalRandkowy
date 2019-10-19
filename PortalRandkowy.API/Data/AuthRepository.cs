@@ -24,6 +24,8 @@ namespace PortalRandkowy.API.Data
             
             if(!VerifyPasswordHash(password,user.PasswordHash,user.PaswordSalt))
                 return null;
+
+                return user;
         }
 
         public async Task<User> Register(User user, string password)
