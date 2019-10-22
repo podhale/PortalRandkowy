@@ -8,7 +8,7 @@ namespace PortalRandkowy.API.Models
         public int Id { get; set; }
         public string Username { get; set; }
         public byte[] PasswordHash { get; set; }
-        public byte[] PaswordSalt { get; set; }
+        public byte[] PasswordSalt { get; set; }
 
          // Postawowe informacje
         public string Gender { get; set; }          // Płeć

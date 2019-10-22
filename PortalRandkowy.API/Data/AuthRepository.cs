@@ -22,7 +22,7 @@ namespace PortalRandkowy.API.Data
             if(user == null)
                 return null;
             
-            if(!VerifyPasswordHash(password,user.PasswordHash,user.PaswordSalt))
+            if(!VerifyPasswordHash(password,user.PasswordHash,user.PasswordSalt))
                 return null;
 
                 return user;
@@ -34,7 +34,7 @@ namespace PortalRandkowy.API.Data
             CreatePasswordHashSalt(password, out passwordHash, out passwordSalt);
 
             user.PasswordHash = passwordHash;
-            user.PaswordSalt = passwordSalt;
+            user.PasswordSalt = passwordSalt;
 
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
