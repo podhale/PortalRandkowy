@@ -15,6 +15,8 @@ import { UsersListComponent } from './users/users-list/users-list.component';
 import { LikesComponent } from './likes/likes.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
+import { UserService } from './_services/user.service';
+import { AuthGuard } from './_guards/auth.guard';
 
 export function tokkenGetter() {
    return localStorage.getItem('token');
@@ -44,7 +46,10 @@ export function tokkenGetter() {
       RouterModule.forRoot(appRoutes)
    ],
    providers: [
-      AuthService, AlertifyService
+      AuthService,
+      AlertifyService,
+      UserService,
+      AuthGuard
    ],
    bootstrap: [
       AppComponent
