@@ -18,6 +18,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { UserService } from './_services/user.service';
 import { AuthGuard } from './_guards/auth.guard';
+import { ErrorInterceptorProvider } from './_services/error.interceptor';
+import { UserCardComponent } from './users/user-card/user-card.component';
 
 export function tokkenGetter() {
    return localStorage.getItem('token');
@@ -31,7 +33,8 @@ export function tokkenGetter() {
       RegisterComponent,
       UsersListComponent,
       LikesComponent,
-      MessagesComponent
+      MessagesComponent,
+      UserCardComponent
    ],
    imports: [
       BrowserModule,
@@ -51,7 +54,8 @@ export function tokkenGetter() {
       AuthService,
       AlertifyService,
       UserService,
-      AuthGuard
+      AuthGuard,
+      ErrorInterceptorProvider
    ],
    bootstrap: [
       AppComponent
