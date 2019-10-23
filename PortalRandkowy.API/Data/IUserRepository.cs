@@ -4,9 +4,9 @@ using PortalRandkowy.API.Models;
 
 namespace PortalRandkowy.API.Data
 {
-    public interface IUserRepository
+    public interface IUserRepository : IGenericRepository
     {
-         Task<IEnumerable<User>> getUser();
+         Task<IEnumerable<User>> getUsers();
          Task<User> getUser(int id);
     }
 }
