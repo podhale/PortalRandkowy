@@ -1,0 +1,134 @@
+<div class='container mt-4'>
+  <div class='row'>
+    <div class='col-sm-3'>
+        <div class="card">
+          <img class="card-img-top img-thumbnail" src="{{user?.photoUrl}}" alt="{{user?.username}}">
+          <div class="card-footer">
+              <div class="btn-group d-flex">
+                  <button class="btn btn-info w-100 btn-sm">Lubię <i class="fa fa-thumbs-up"></i></button>
+                  <button class="btn btn-primary w-100 btn-sm">Wiadomość <i class="fa fa-envelope"></i></button>
+              </div>
+            </div>
+          <div class="card-body">
+            <div>
+              <strong>Nazwa:</strong>
+              <p>{{user?.username | titlecase}}</p>
+            </div>
+            <div>
+              <strong>Wiek:</strong>
+              <p>{{user?.age}}</p>
+            </div>
+            <div>
+              <strong>Znak zodiaku:</strong>
+              <p>{{user?.zodiacSign}}</p>
+            </div>
+            <div>
+              <strong>Lokalizacja:</strong>
+              <p>{{user?.city}},{{user?.country}}</p>
+            </div>
+            <div>
+              <strong>Ostatnia aktywnosc:</strong>
+              <p>{{user?.lastActive}}</p>
+            </div>
+          </div>
+         
+        </div>
+    </div>
+    <div class='col-sm-8'>
+       <div class="tab-panel">
+         <tabset class="user-tabset">
+           <tab heading="Zdjęcia"></tab>
+           
+           <tab heading="Informacje o {{user?.username | titlecase}}"> 
+             <table class="mt-3 user-table">
+               <tr>
+                 <td class="user-table-td">
+                   <h5>Wzrost</h5>
+                   <p>{{user.growth}}</p>
+                 </td>
+                 
+                 <td class="user-table-td">
+                    <h5>Stan cywilny</h5>
+                    <p>{{user.martialStatus}}</p>
+                  </td>
+                </tr>
+                 <tr>
+                  <td>
+                     <h5>Kolor oczu</h5>
+                     <p>{{user.eyeColor}}</p>
+                   </td>
+                 
+                   <td>
+                      <h5>Wykształcenie</h5>
+                      <p>{{user.education}}</p>
+                    </td>
+                    
+               </tr>
+
+               <tr>
+                  <td>
+                    <h5>Kolor włosów</h5>
+                    <p>{{user.hairColor}}</p>
+                  </td>
+                  
+                  <td>
+                     <h5>Dzieci</h5>
+                     <p>{{user.children}}</p>
+                   </td>
+                  </tr>
+                  <tr>
+                      <td>
+                         <h5>Zawód</h5>
+                         <p>{{user.profession}}</p>
+                       </td>
+                   <td>
+                      <h5>Języki obce</h5>
+                      <p>{{user.languages}}</p>
+                    </td>
+                  
+                </tr>
+             </table>
+           </tab>
+           
+           <tab heading="O mnie">
+              <h5 class="mt-3">Motto życiowe</h5>
+              <p>{{user.motto}}</p>
+              <h5>Opis</h5>
+              <p>{{user.description}}</p>
+              <h5>Osobowość</h5>
+              <p>{{user.personality}}</p>
+              <h5>Szukam</h5>
+              <p>{{user.lookingFor}}</p>
+           </tab>
+           
+           <tab heading="Zainteresowania">
+              <h5 class="mt-3">Zainteresowania</h5>
+              <p>{{user.interests}}</p>
+              <h5>Czas wolny</h5>
+              <p>{{user.freeTime}}</p>
+              <h5>Sport</h5>
+              <p>{{user.sport}}</p>
+              <h5>Filmy</h5>
+              <p>{{user.movies}}</p>
+              <h5>Muzyka</h5>
+              <p>{{user.music}}</p>
+           </tab>
+           
+           <tab heading="Preferencje">
+              <h5 class="mt-3">Lubię</h5>
+              <p>{{user.iLike}}</p>
+              <h5>Nie lubię</h5>
+              <p>{{user.idoNotLike}}</p>
+              <h5>Rozśmiesza mnie</h5>
+              <p>{{user.makesMeLaugh}}</p>
+              <h5>Najlepiej czuję się w</h5>
+              <p>{{user.itFeelsBestIn}}</p>
+              <h5>Przyjaciele opisali by mnie</h5>
+              <p>{{user.friendeWouldDescribeMe}}</p>
+           </tab>
+         </tabset>
+       </div>
+    
+      </div>
+  </div>
+</div>
