@@ -1,8 +1,11 @@
 <div class='container mt-4'>
+  <h2>
+      Profil {{user.username | titlecase}}
+    </h2>
   <div class='row'>
     <div class='col-sm-3'>
         <div class="card">
-          <img class="card-img-top img-thumbnail" src="{{user?.photoUrl}}" alt="{{user?.username}}">
+          <img class="card-img-top img-thumbnail" src="{{user.photoUrl}}" alt="{{user.username}}">
           <div class="card-footer">
               <div class="btn-group d-flex">
                   <button class="btn btn-info w-100 btn-sm">Lubię <i class="fa fa-thumbs-up"></i></button>
@@ -37,7 +40,9 @@
     <div class='col-sm-8'>
        <div class="tab-panel">
          <tabset class="user-tabset">
-           <tab heading="Zdjęcia"></tab>
+           <tab heading="Zdjęcia">
+              <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+           </tab>
            
            <tab heading="Informacje o {{user?.username | titlecase}}"> 
              <table class="mt-3 user-table">

@@ -1,0 +1,142 @@
+<div class='container mt-4'>
+  <h2>
+    Twój profil - Edycja
+  </h2>
+  <div class='row'>
+    <div class='col-sm-3'>
+      <div class="card">
+        <img class="card-img-top img-thumbnail" src="{{user.photoUrl}}" alt="{{user.username}}">
+        <div class="card-footer">
+           <button class="btn btn-success btn-block w-100 btn-sm"><i class="fa fa-save"> </i>  Zapisz zmiany </button>
+          
+        </div>
+        <div class="card-body">
+          <div>
+            <strong>Nazwa:</strong>
+            <p>{{user?.username | titlecase}}</p>
+          </div>
+          <div>
+            <strong>Wiek:</strong>
+            <p>{{user?.age}}</p>
+          </div>
+          <div>
+            <strong>Znak zodiaku:</strong>
+            <p>{{user?.zodiacSign}}</p>
+          </div>
+          <div>
+            <strong>Lokalizacja:</strong>
+            <p>{{user?.city}},{{user?.country}}</p>
+          </div>
+          <div>
+            <strong>Ostatnia aktywnosc:</strong>
+            <p>{{user?.lastActive}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class='col-sm-8'>
+      <div class="alert alert-danger">
+        <p><strong>Informacja: </strong> Dokonałeś zmian. Wszelkie nie zapisane zmiany zostaną utracone!</p>
+      </div>
+      <form>
+        <div class="tab-panel">
+          <tabset class="user-tabset">
+            <tab heading="Zdjęcia">
+              Edycja zdjęc do zrobienia
+            </tab>
+
+            <tab heading="Informacje">
+              <table class="mt-3 user-table">
+                <tr>
+                  <td class="user-table-td">
+                    <h5>Wzrost</h5>
+                    <textarea class="form-control-sm" name="growth" [(ngModel)]="user.growth"></textarea>
+                  </td>
+
+                  <td class="user-table-td">
+                    <h5>Stan cywilny</h5>
+                    <textarea class="form-control-sm" name="martialStatus" [(ngModel)]="user.martialStatus"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5>Kolor oczu</h5>
+                    <textarea class="form-control-sm" name="eyeColor" [(ngModel)]="user.eyeColor"></textarea>
+                  </td>
+
+                  <td>
+                    <h5>Wykształcenie</h5>
+                    <p>{{user.education}}</p>
+                    <textarea class="form-control-sm" name="education" [(ngModel)]="user.education"></textarea>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <h5>Kolor włosów</h5>
+                    <textarea class="form-control-sm" name="hairColor" [(ngModel)]="user.hairColor"></textarea>
+                  </td>
+
+                  <td>
+                    <h5>Dzieci</h5>
+                    <textarea class="form-control-sm" name="children" [(ngModel)]="user.children"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5>Zawód</h5>
+                    <textarea class="form-control-sm" name="profession" [(ngModel)]="user.profession"></textarea>
+                  </td>
+                  <td>
+                    <h5>Języki obce</h5>
+                    <textarea class="form-control-sm" name="languages" [(ngModel)]="user.languages"></textarea>
+                  </td>
+                </tr>
+              </table>
+            </tab>
+
+            <tab heading="O mnie">
+              <h5 class="mt-3">Motto życiowe</h5>
+              <textarea class="form-control" rows="2" name="motto" [(ngModel)]="user.motto"></textarea>
+              <h5>Opis</h5>
+              <textarea class="form-control" rows="4" name="description" [(ngModel)]="user.description"></textarea>
+              <h5>Osobowość</h5>
+              <textarea class="form-control" rows="2" name="personality" [(ngModel)]="user.personality"></textarea>
+              <h5>Szukam</h5>
+              <textarea class="form-control" rows="4" name="lookingFor" [(ngModel)]="user.lookingFor"></textarea>
+            </tab>
+          
+            <tab heading="Zainteresowania">
+              <h5 class="mt-3">Zainteresowania</h5>
+              <textarea class="form-control" rows="2" name="interests" [(ngModel)]="user.interests"></textarea>
+              <h5>Czas wolny</h5>
+              <textarea class="form-control" rows="2" name="freeTime" [(ngModel)]="user.freeTime"></textarea>
+              <h5>Sport</h5>
+              <textarea class="form-control" rows="2" name="sport" [(ngModel)]="user.sport"></textarea>
+              <h5>Filmy</h5>
+              <textarea class="form-control" rows="2" name="movies" [(ngModel)]="user.movies"></textarea>
+              <h5>Muzyka</h5>
+              <textarea class="form-control" rows="2" name="music" [(ngModel)]="user.music"></textarea>
+            </tab>
+
+            <tab heading="Preferencje">
+              <h5 class="mt-3">Lubię</h5>
+              <textarea class="form-control" rows="2" name="iLike" [(ngModel)]="user.iLike"></textarea>
+              <h5>Nie lubię</h5>
+              <textarea class="form-control" rows="2" name="idoNotLike" [(ngModel)]="user.idoNotLike"></textarea>
+              <h5>Rozśmiesza mnie</h5>
+              <textarea class="form-control" rows="2" name="makesMeLaugh" [(ngModel)]="user.makesMeLaugh"></textarea>
+              <h5>Najlepiej czuję się w</h5>
+              <textarea class="form-control" rows="2" name="itFeelsBestIn" [(ngModel)]="user.itFeelsBestIn"></textarea>
+              <h5>Przyjaciele opisali by mnie</h5>
+              <textarea class="form-control" rows="2" name="friendeWouldDescribeMe"
+                [(ngModel)]="user.friendeWouldDescribeMe"></textarea>
+            </tab>
+          </tabset>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
