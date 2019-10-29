@@ -17,7 +17,8 @@
       <div class="card">
         <img class="card-img-top img-thumbnail" src="{{user.photoUrl}}" alt="{{user.username}}">
         <div class="card-footer">
-          <button class="btn btn-success btn-block w-100 btn-sm" form="editForm" [disabled]="!editForm.dirty" edi><i class="fa fa-save"> </i> Zapisz zmiany </button>
+          <button class="btn btn-success btn-block w-100 btn-sm" form="editForm" [disabled]="!editForm.dirty" edi><i
+              class="fa fa-save"> </i> Zapisz zmiany </button>
 
         </div>
         <div class="card-body">
@@ -52,93 +53,94 @@
             <tab heading="Zdjęcia">
               Edycja zdjęc do zrobienia
             </tab>
-
             <tab heading="Informacje">
-              <table class="mt-3 user-table">
+              <table class="user-table">
                 <tr>
                   <td class="user-table-td">
                     <h5>Wzrost</h5>
-                    <textarea class="form-control-sm" name="growth" [(ngModel)]="user.growth"></textarea>
+                    <textarea class="form-control" name="growth" rows="1" [(ngModel)]="user.growth"></textarea>
                   </td>
-
                   <td class="user-table-td">
                     <h5>Stan cywilny</h5>
-                    <textarea class="form-control-sm" name="martialStatus" [(ngModel)]="user.martialStatus"></textarea>
+                    <textarea class="form-control" name="martialStatus" rows="1"
+                      [(ngModel)]="user.martialStatus"></textarea>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <h5>Kolor oczu</h5>
-                    <textarea class="form-control-sm" name="eyeColor" [(ngModel)]="user.eyeColor"></textarea>
+                    <textarea class="form-control" name="eyeColor" rows="1" [(ngModel)]="user.eyeColor"></textarea>
                   </td>
-
                   <td>
                     <h5>Wykształcenie</h5>
-                    <p>{{user.education}}</p>
-                    <textarea class="form-control-sm" name="education" [(ngModel)]="user.education"></textarea>
+                    <textarea class="form-control" name="education" rows="1" [(ngModel)]="user.education"></textarea>
                   </td>
-
                 </tr>
-
                 <tr>
                   <td>
                     <h5>Kolor włosów</h5>
-                    <textarea class="form-control-sm" name="hairColor" [(ngModel)]="user.hairColor"></textarea>
+                    <textarea class="form-control" name="hairColor" rows="1" [(ngModel)]="user.hairColor"></textarea>
                   </td>
-
                   <td>
-                    <h5>Dzieci</h5>
-                    <textarea class="form-control-sm" name="children" [(ngModel)]="user.children"></textarea>
+                    <h5>Zawód</h5>
+                    <textarea class="form-control" name="profession" rows="1" [(ngModel)]="user.profession"></textarea>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <h5>Zawód</h5>
-                    <textarea class="form-control-sm" name="profession" [(ngModel)]="user.profession"></textarea>
+                    <h5>Dzieci</h5>
+                    <textarea class="form-control" name="children" rows="1" [(ngModel)]="user.children"></textarea>
                   </td>
                   <td>
                     <h5>Języki obce</h5>
-                    <textarea class="form-control-sm" name="languages" [(ngModel)]="user.languages"></textarea>
+                    <textarea class="form-control" name="languages" rows="1" [(ngModel)]="user.languages"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h5>Miasto</h5>
+                    <textarea class="form-control" name="city" rows="1" [(ngModel)]="user.city"></textarea>
+                  </td>
+                  <td>
+                    <h5>Kraj</h5>
+                    <textarea class="form-control" name="country" rows="1" [(ngModel)]="user.country"></textarea>
                   </td>
                 </tr>
               </table>
             </tab>
-
             <tab heading="O mnie">
-              <h5 class="mt-3">Motto życiowe</h5>
-              <textarea class="form-control" rows="2" name="motto" [(ngModel)]="user.motto"></textarea>
+              <h5>Motto życiowe</h5>
+              <textarea class="form-control" name="motto" rows="4" [(ngModel)]="user.motto"></textarea>
               <h5>Opis</h5>
-              <textarea class="form-control" rows="4" name="description" [(ngModel)]="user.description"></textarea>
+              <textarea class="form-control" name="description" rows="4" [(ngModel)]="user.description"></textarea>
               <h5>Osobowość</h5>
-              <textarea class="form-control" rows="2" name="personality" [(ngModel)]="user.personality"></textarea>
+              <textarea class="form-control" name="personality" rows="4" [(ngModel)]="user.personality"></textarea>
               <h5>Szukam</h5>
-              <textarea class="form-control" rows="4" name="lookingFor" [(ngModel)]="user.lookingFor"></textarea>
+              <textarea class="form-control" name="lookingFor" rows="4" [(ngModel)]="user.lookingFor"></textarea>
             </tab>
-
             <tab heading="Zainteresowania">
-              <h5 class="mt-3">Zainteresowania</h5>
-              <textarea class="form-control" rows="2" name="interests" [(ngModel)]="user.interests"></textarea>
+              <h5>Zainteresowania</h5>
+              <textarea class="form-control" name="interests" rows="4" [(ngModel)]="user.interests"></textarea>
               <h5>Czas wolny</h5>
-              <textarea class="form-control" rows="2" name="freeTime" [(ngModel)]="user.freeTime"></textarea>
+              <textarea class="form-control" name="freeTime" rows="4" [(ngModel)]="user.freeTime"></textarea>
               <h5>Sport</h5>
-              <textarea class="form-control" rows="2" name="sport" [(ngModel)]="user.sport"></textarea>
+              <textarea class="form-control" name="sport" rows="4" [(ngModel)]="user.sport"></textarea>
               <h5>Filmy</h5>
-              <textarea class="form-control" rows="2" name="movies" [(ngModel)]="user.movies"></textarea>
+              <textarea class="form-control" name="movies" rows="4" [(ngModel)]="user.movies"></textarea>
               <h5>Muzyka</h5>
-              <textarea class="form-control" rows="2" name="music" [(ngModel)]="user.music"></textarea>
+              <textarea class="form-control" name="music" rows="4" [(ngModel)]="user.music"></textarea>
             </tab>
-
             <tab heading="Preferencje">
-              <h5 class="mt-3">Lubię</h5>
-              <textarea class="form-control" rows="2" name="iLike" [(ngModel)]="user.iLike"></textarea>
+              <h5>Lubię</h5>
+              <textarea class="form-control" name="iLike" rows="4" [(ngModel)]="user.iLike"></textarea>
               <h5>Nie lubię</h5>
-              <textarea class="form-control" rows="2" name="idoNotLike" [(ngModel)]="user.idoNotLike"></textarea>
+              <textarea class="form-control" name="idoNotLike" rows="4" [(ngModel)]="user.idoNotLike"></textarea>
               <h5>Rozśmiesza mnie</h5>
-              <textarea class="form-control" rows="2" name="makesMeLaugh" [(ngModel)]="user.makesMeLaugh"></textarea>
+              <textarea class="form-control" name="makesMeLaugh" rows="4" [(ngModel)]="user.makesMeLaugh"></textarea>
               <h5>Najlepiej czuję się w</h5>
-              <textarea class="form-control" rows="2" name="itFeelsBestIn" [(ngModel)]="user.itFeelsBestIn"></textarea>
+              <textarea class="form-control" name="itFeelsBestIn" rows="4" [(ngModel)]="user.itFeelsBestIn"></textarea>
               <h5>Przyjaciele opisali by mnie</h5>
-              <textarea class="form-control" rows="2" name="friendeWouldDescribeMe"
+              <textarea class="form-control" name="friendeWouldDescribeMe" rows="4"
                 [(ngModel)]="user.friendeWouldDescribeMe"></textarea>
             </tab>
           </tabset>

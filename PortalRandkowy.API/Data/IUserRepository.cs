@@ -6,7 +6,7 @@ namespace PortalRandkowy.API.Data
 {
     public interface IUserRepository : IGenericRepository
     {
-         Task<IEnumerable<User>> getUsers();
-         Task<User> getUser(int id);
+         Task<IEnumerable<User>> GetUsers();
+         Task<User> GetUser(int id);
     }
 }

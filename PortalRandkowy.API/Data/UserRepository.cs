@@ -13,13 +13,13 @@ namespace PortalRandkowy.API.Data
             _context = context;
         }
 
-        public async Task<IEnumerable<User>> getUsers()
+        public async Task<IEnumerable<User>> GetUsers()
         {
             var user = await _context.Users.Include(p => p.Photos).ToListAsync();
             return user;
         }
 
-        public async Task<User> getUser(int id)
+        public async Task<User> GetUser(int id)
         {
             var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(u => u.Id == id);
             return user;
