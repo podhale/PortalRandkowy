@@ -33,7 +33,7 @@ export class NavComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('token');
-    this.router.navigate(['/home']);
+    this.router.navigate(['']);
     this.alertify.message('Wylogowano z aplikacji');
   }
 }

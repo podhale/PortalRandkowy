@@ -6,5 +6,7 @@ export class PreventUnsavedChanges implements CanDeactivate<UserEditComponent> {
         if (component.editForm.dirty) {
             return confirm('Jesteś pewien, że chcesz kontynuować? Wszelkie nie zapiasne dane zostaną utracone');
         }
+        return true;
     }
 }
+

@@ -15,7 +15,7 @@ export class UserEditResolver implements Resolve<User> {
                 private alertfiy: AlertifyService,
                 private authService: AuthService) { }
 
-    resolve(route: ActivatedRouteSnapshot): User | Observable<User> {
+    resolve(route: ActivatedRouteSnapshot): Observable<User> {
         return this.userService.getUser(this.authService.decodeToken.nameid).pipe(
             catchError(error => {
                 this.alertfiy.error('Problem z pobieraniem danych');

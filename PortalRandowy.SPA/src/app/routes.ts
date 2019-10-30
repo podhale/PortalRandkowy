@@ -20,10 +20,10 @@ export const appRoutes: Routes = [
       children:
       [
         { path: 'uzytkownicy', component: UsersListComponent, resolve: {users: UserListResolver} },
-        { path: 'uzytkownicy/edycja', component: UserEditComponent,
+        { path: 'uzytkownicy/:id', component: UserDetailComponent, resolve: {user: UserDetailResolver} },
+        { path: 'uzytkownik/edycja', component: UserEditComponent,
                                       resolve: {user: UserEditResolver},
                                       canDeactivate: [PreventUnsavedChanges]},
-        { path: 'uzytkownicy/:id', component: UserDetailComponent, resolve: {user: UserDetailResolver} },
         { path: 'polubienia', component: LikesComponent },
         { path: 'wiadomosci', component: MessagesComponent },
       ]
