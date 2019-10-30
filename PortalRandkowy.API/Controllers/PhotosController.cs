@@ -95,7 +95,7 @@ namespace PortalRandkowy.API.Controllers
                 return Unauthorized();
             
             var user = await _repository.GetUser(userId);
-            if (user.Photos.Any(p => p.Id == id))
+            if (!user.Photos.Any(p => p.Id == id))
                 return Unauthorized();
 
             var photoFormRepo = await _repository.GetPhoto(id);
