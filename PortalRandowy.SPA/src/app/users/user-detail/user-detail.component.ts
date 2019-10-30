@@ -28,7 +28,7 @@ export class UserDetailComponent implements OnInit {
 
     this.galleryOptions = [
       {
-          width: '700px',
+          width: '500px',
           height: '500px',
           thumbnailsColumns: 4,
           imagePercent: 100,
@@ -36,6 +36,7 @@ export class UserDetailComponent implements OnInit {
           imageAnimation: NgxGalleryAnimation.Slide
       }
     ];
+
     this.galleryImages = this.getImages();
   }
 
@@ -48,10 +49,10 @@ export class UserDetailComponent implements OnInit {
         small: this.user.photos[i].url,
         medium: this.user.photos[i].url,
         big: this.user.photos[i].url,
-        description: this.user.photos[i].description,
+        description: this.user.photos[i].description
       });
-      return imagesUrls;
     }
+    return imagesUrls;
   }
 
 }
