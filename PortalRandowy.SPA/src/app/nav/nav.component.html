@@ -16,6 +16,9 @@
 
     <div *ngIf="loggedIn()" class="dropdown show" dropdown>
       <a class="dropdown-toggle text-light" dropdownToggle>
+        <span>
+          <img src="{{photoUrl}}">
+        </span>
         Witaj {{ authService.decodeToken.unique_name | titlecase }}
       </a>
 
