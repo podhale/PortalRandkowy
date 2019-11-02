@@ -49,7 +49,7 @@ namespace PortalRandkowy.API.Controllers
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
             var userFromRepo = await _repository.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
-            if (userFromRepo == null)
+            if (userFromRepo == null) 
                 return Unauthorized();
 
             //Create Token
