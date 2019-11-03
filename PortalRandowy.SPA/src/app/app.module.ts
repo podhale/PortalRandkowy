@@ -30,6 +30,7 @@ import { UserEditComponent } from './users/user-edit/user-edit.component';
 import { UserEditResolver } from './_resolvers/user-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotosComponent } from './users/photos/photos.component';
+import { TimeAgoPipe } from './pipe/time-ago-pipe';
 
 export function tokkenGetter() {
    return localStorage.getItem('token');
@@ -47,7 +48,8 @@ export function tokkenGetter() {
       UserCardComponent,
       UserDetailComponent,
       UserEditComponent,
-      PhotosComponent
+      PhotosComponent,
+      TimeAgoPipe
    ],
    imports: [
       BrowserModule,
