@@ -6,6 +6,7 @@ export interface User {
         username: string;
         gender: string;
         age: number;
+        dateOfBrith: string;
         zodiacSign: string;
         created: Date;
         lastActive: Date;

@@ -24,7 +24,7 @@ export class NavComponent implements OnInit {
     this.authService.login(this.model).subscribe(next => {
       this.alertify.success('Zalogowałeś się do aplikacji');
     }, error => {
-      this.alertify.error(error);
+      this.alertify.error('Błędna nazwa użytkownika lub hasło!');
     }, () => {
       this.router.navigate(['/uzytkownicy']);
     });
