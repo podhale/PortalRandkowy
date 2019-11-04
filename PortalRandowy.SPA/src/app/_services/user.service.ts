@@ -2,19 +2,19 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from '../_models/User';
-import { BehaviorSubject } from 'rxjs';
-import { PaginationResult } from '../_models/Pagination';
+import { User } from '../_models/user';
+import { PaginationResult } from '../_models/pagination';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
   baseUrl = environment.apiUrl ;
   constructor( private http: HttpClient) { }
 
-  getUsers(page ?, itemsPerPage?): Observable<PaginationResult<User[]>> {
+  getUsers(page?, itemsPerPage?): Observable<PaginationResult<User[]>> {
 
     const paginationResult: PaginationResult<User[]> = new PaginationResult<User[]>();
     let params = new HttpParams();
@@ -24,7 +24,8 @@ export class UserService {
       params = params.append('pageNumber', page);
       params = params.append('pageSize', itemsPerPage);
     }
-    return this.http.get<User[]>(this.baseUrl + 'users', {observe: 'response', params})
+
+    return this.http.get<User[]>(this.baseUrl + 'users', { observe: 'response', params })
       .pipe(
         map(response => {
           paginationResult.result = response.body;
