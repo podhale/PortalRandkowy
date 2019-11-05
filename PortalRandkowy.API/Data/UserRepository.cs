@@ -23,6 +23,17 @@ namespace PortalRandkowy.API.Data
             users = users.Where( u => u.Id != userParams.UserId);
             users = users.Where(u => u.Gender == userParams.Gender);
 
+            if (userParams.UserLikes)
+            {
+                var userLikes = await GetUserLikes(userParams.UserId, userParams.UserLikes);
+                users = users.Where(u => userLikes.Contains(u.Id));
+            }
+
+            if (userParams.UserIsLiked)
+            {
+                var UserIsLiked = await GetUserLikes(userParams.UserId, userParams.UserLikes);
+                users = users.Where(u => UserIsLiked.Contains(u.Id));
+            }
             if (userParams.MinAge != 18 || userParams.MaxAge != 100) {
 
                 var minDate = DateTime.Today.AddYears(-userParams.MaxAge - 1);
@@ -70,6 +81,22 @@ namespace PortalRandkowy.API.Data
         public async Task<Like> GetLike(int userId, int recipientId)
         {
             return await _context.Likes.FirstOrDefaultAsync(u => u.UserLikesId == userId && u.UserIsLikedId == recipientId);
+        }
+
+        private async Task<IEnumerable<int>> GetUserLikes(int id, bool userLikes)
+        {
+            var user = await _context.Users.Include(x => x.UserLikes)
+                                           .Include(x => x.UserIsLiked)
+                                           .FirstOrDefaultAsync(u => u.Id == id);
+
+            if (userLikes)
+            {
+                return user.UserLikes.Where(u => u.UserIsLikedId == id).Select(i => i.UserLikesId);
+            }
+            else
+            {
+                return user.UserIsLiked.Where(u => u.UserLikesId == id).Select(i => i.UserIsLikedId);
+            }
         }
     }
 }
