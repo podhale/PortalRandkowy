@@ -57,6 +57,8 @@ namespace PortalRandkowy.API.Models
 
         public ICollection<Like> UserLikes { get; set; } // uzytkownik lubi
         public ICollection<Like> UserIsLiked { get; set; } // uzytkownik jest lubiany
+        public ICollection<Message> MessegesSent { get; set; } //wiadomosci wysłane
+        public ICollection<Message> MessegesRecived { get; set; } //wiadomosci wysłane
 
 
     }
