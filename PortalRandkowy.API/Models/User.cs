@@ -55,6 +55,9 @@ namespace PortalRandkowy.API.Models
         //Zakładka zdjęcia
         public ICollection<Photo> Photos { get; set; }
 
+        public ICollection<Like> UserLikes { get; set; } // uzytkownik lubi
+        public ICollection<Like> UserIsLiked { get; set; } // uzytkownik jest lubiany
+
 
     }
 }
