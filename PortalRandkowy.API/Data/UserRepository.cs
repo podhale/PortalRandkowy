@@ -30,8 +30,21 @@ namespace PortalRandkowy.API.Data
                 users = users.Where(u => u.DateOfBirth >= minDate && u.DateOfBirth <= maxDate);
             }
 
-            if (userParams.ZodiacSign != null) {
+            if (userParams.ZodiacSign != "Wszystkie") {
                 users = users.Where(u => u.ZodiacSign == userParams.ZodiacSign);
+            }
+
+             if (!string.IsNullOrEmpty(userParams.OrderBy))
+            {
+                switch (userParams.OrderBy)
+                {
+                    case "created":
+                        users = users.OrderByDescending(u => u.Created);
+                        break;
+                    default:
+                        users = users.OrderByDescending(u => u.LastActive);
+                        break;
+                }
             }
 
             return await PagedList<User>.CreateListAsync(users, userParams.PageNumber, userParams.PageSize);

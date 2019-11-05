@@ -14,7 +14,7 @@ export class UserService {
   baseUrl = environment.apiUrl ;
   constructor( private http: HttpClient) { }
 
-  getUsers(page?, itemsPerPage?): Observable<PaginationResult<User[]>> {
+  getUsers(page?, itemsPerPage?, userParams?): Observable<PaginationResult<User[]>> {
 
     const paginationResult: PaginationResult<User[]> = new PaginationResult<User[]>();
     let params = new HttpParams();
@@ -23,6 +23,15 @@ export class UserService {
 
       params = params.append('pageNumber', page);
       params = params.append('pageSize', itemsPerPage);
+    }
+
+    if (userParams != null) {
+
+      params = params.append('minAge', userParams.minAge);
+      params = params.append('maxAge', userParams.maxAge);
+      params = params.append('gender', userParams.gender);
+      params = params.append('zodiacSign', userParams.zodiacSign);
+      params = params.append('orderBy', userParams.orderBy);
     }
 
     return this.http.get<User[]>(this.baseUrl + 'users', { observe: 'response', params })
