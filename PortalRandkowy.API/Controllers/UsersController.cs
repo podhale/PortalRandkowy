@@ -81,7 +81,9 @@ namespace PortalRandkowy.API.Controllers
             var like = await _repo.GetLike(id, recipientId);
 
             if (like != null) {
-                return BadRequest("Już lubisz tego użytkownika");
+               _repo.Delete<Like>(like);
+               if (await _repo.saveAll())
+                return Ok("Nie można polubić użytkownika");
             }
 
             if (await _repo.GetUser(recipientId) == null)

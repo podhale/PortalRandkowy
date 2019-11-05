@@ -17,6 +17,7 @@ export class LikesComponent implements OnInit {
   pagination: Pagination;
   likesParam: string;
 
+
   constructor(private authService: AuthService,
               private userService: UserService,
               private route: ActivatedRoute,
@@ -42,6 +43,10 @@ export class LikesComponent implements OnInit {
 
   pageChanged(event: any): void {
     this.pagination.currentPage = event.page;
+    this.loadUsers();
+  }
+
+  getUserIsLiked() {
     this.loadUsers();
   }
 }
