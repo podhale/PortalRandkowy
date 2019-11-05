@@ -39,7 +39,7 @@ export class UsersListComponent implements OnInit {
   pagination: Pagination;
 
   constructor(private userService: UserService,
-              private alertifi: AlertifyService,
+              private alertify: AlertifyService,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -76,7 +76,7 @@ export class UsersListComponent implements OnInit {
         this.pagination = res.pagination;
         console.log(this.userParams);
       }, error => {
-        this.alertifi.error(error);
+        this.alertify.error(error);
      });
    }
 
