@@ -12,6 +12,7 @@ import { UserEditComponent } from './users/user-edit/user-edit.component';
 import { UserEditResolver } from './_resolvers/user-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { LikesResolver } from './_resolvers/likes.resolver';
+import { MessagesResolver } from './_resolvers/messages.resolver';
 
 export const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -20,14 +21,21 @@ export const appRoutes: Routes = [
       canActivate: [AuthGuard],
       children:
       [
-        { path: 'uzytkownicy', component: UsersListComponent, resolve: {users: UserListResolver} },
-        { path: 'uzytkownicy/:id', component: UserDetailComponent, resolve: {user: UserDetailResolver} },
+        { path: 'uzytkownicy', component: UsersListComponent,
+                               resolve: {users: UserListResolver} },
+
+        { path: 'uzytkownicy/:id', component: UserDetailComponent,
+                                   resolve: {user: UserDetailResolver} },
+
         { path: 'uzytkownik/edycja', component: UserEditComponent,
-                                      resolve: {user: UserEditResolver},
-                                      canDeactivate: [PreventUnsavedChanges]},
+                                     resolve: {user: UserEditResolver},
+                                     canDeactivate: [PreventUnsavedChanges]},
+
         { path: 'polubienia', component: LikesComponent,
                               resolve: { users: LikesResolver }},
-        { path: 'wiadomosci', component: MessagesComponent },
+
+        { path: 'wiadomosci', component: MessagesComponent,
+                              resolve: {messages: MessagesResolver} },
       ]
     },
     { path: '**', redirectTo: '', pathMatch: 'full' },

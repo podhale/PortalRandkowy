@@ -1,0 +1,13 @@
+.img-circle {
+    max-height: 50px;
+}
+
+.table-messages {
+    vertical-align: middle !important; 
+    align-content: center;
+}
+
+table {
+    
+    margin-top: 15px;
+}
